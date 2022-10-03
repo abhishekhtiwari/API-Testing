@@ -26,15 +26,31 @@ namespace API_Testing.Controllers
             return id.ToString();
         }
 
-        // POST api/values      
+        //Note:
+        //------------------- Model as a Parameter ---------------------
+        //1. GET => [FromUri]
+        //2. POST => [FromBody]
+
+
+        // api/values?Username=abhishek&password=123    
+        //                or 
+        //PostMan: Body-> x-www-form-urlencoded
         [HttpGet]     
-        public string Get1(Authenticate authenticate)
+        public string Getuser([FromUri] Authenticate authenticate)
         {
-            return authenticate.ToString();
+            return authenticate.Username.ToString();
+        }
+
+        // api/values?Username=abhishek&password=123  
+        [HttpPost]
+        public string GetInfo([FromBody] Authenticate authenticate)
+        {
+            return authenticate.Username.ToString();
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void GetIdjhd(int id, [FromUri] Authenticate authenticate)
         {
         }
        

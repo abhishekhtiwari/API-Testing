@@ -1,0 +1,4 @@
+1. Select "Create a New Project" and click on "Next".
+2. choose "ASP.NET web application (.NET framework) C#".
+3. give Project Name.
+4. Select Web API and click on "Create".
